@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Maan | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0d6efd;
+            --dark-bg: #212529;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+        }
+        .hero-img {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 350px; /* Adjust based on your photo */
+        }
+
+        /* Skills Cards */
+        .skill-card {
+            border: none;
+            transition: transform 0.3s;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .skill-card:hover { transform: translateY(-5px); }
+        
+        /* Timeline */
+        .timeline-item {
+            border-left: 3px solid var(--primary-blue);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Sunny Maan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="https://github.com/iamsunnymaan" class="btn btn-outline-light ms-3 btn-sm">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary mb-2">Cloud Computing Student</span>
+                    <h1 class="display-4 fw-bold mb-3">Building Cloud Solutions & Innovative Tech</h1>
+                    <p class="lead text-muted mb-4">
+                        I am <strong>Sunny Maan</strong>, an engineering student specializing in <strong>Java, Springboot, and AWS</strong>. I bridge the gap between complex coding and strategic planning.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary btn-lg">Let's Connect</a>
+                        <a href="#projects" class="btn btn-outline-dark btn-lg">View Projects</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                    <img src="https://via.placeholder.com/350x400/0d6efd/ffffff?text=Sunny+Maan+Photo" alt="Sunny Maan" class="hero-img img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="skills">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Technical Skills</h2>
+                <p class="text-muted">My toolkit for development and deployment</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="card skill-card h-100 text-center p-3">
+                        <div class="card-body">
+                            <i class="fa-brands fa-java fa-3x text-danger mb-3"></i>
+                            <h5 class="card-title">Java</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card skill-card h-100 text-center p-3">
+                        <div class="card-body">
+                            <i class="fa-brands fa-aws fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">AWS Cloud</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card skill-card h-100 text-center p-3">
+                        <div class="card-body">
+                            <i class="fa-solid fa-leaf fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Springboot</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card skill-card h-100 text-center p-3">
+                        <div class="card-body">
+                            <i class="fa-brands fa-react fa-3x text-info mb-3"></i>
+                            <h5 class="card-title">React</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5" id="experience">
+        <div class="container">
+            <h2 class="mb-5 text-center">Experience & Leadership</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="timeline-item">
+                        <h5>Secretary - Technophiles Society</h5>
+                        <p class="text-muted small">Chandigarh University | 2025 - Present</p>
+                        <p>Organized student events, increasing engagement and collaboration among peers.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5>Coursera Campus Ambassador</h5>
+                        <p class="text-muted small">Coursera | 2024 - 2025</p>
+                        <p>Organized workshops to promote online learning and career growth.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h5>Entrepreneur - Eternal Financial Services</h5>
+                        <p class="text-muted small">Delhi | 2022 - 2023</p>
+                        <p>Founded and managed a financial services company; achieved high client satisfaction and retention.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4" id="contact">
+        <div class="container text-center">
+            <h3>Get In Touch</h3>
+            <p class="mb-4">Ready to collaborate on Cloud or Java projects?</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="mailto:iamsunnymaan@gmail.com" class="text-white text-decoration-none"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://linkedin.com/in/iamsunnymaan" class="text-white text-decoration-none"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/iamsunnymaan" class="text-white text-decoration-none"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+            <p class="small text-muted">&copy; 2025 Sunny Maan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
