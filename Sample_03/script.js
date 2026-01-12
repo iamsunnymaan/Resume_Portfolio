@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hiddenElements.forEach((el) => observer.observe(el));
 
 
-    // 2. Smooth Scrolling for Navigation Links
+    // 2. Smooth Scrolling for Navigation Links - Center in viewport
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
+                const elementRect = targetElement.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + window.pageYOffset;
+                const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+                
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for fixed navbar
+                    top: middle,
                     behavior: 'smooth'
                 });
             }
