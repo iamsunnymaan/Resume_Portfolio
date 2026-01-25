@@ -84,10 +84,10 @@ document.querySelectorAll('.skill-card, .project-card, .stat-card').forEach(el =
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-        navbar.style.backgroundColor = '#ffffff';
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = 'none';
     } else {
-        navbar.style.backgroundColor = '#ffffff';
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        navbar.style.backgroundColor = 'transparent';
+        navbar.style.boxShadow = 'none';
     }
 });

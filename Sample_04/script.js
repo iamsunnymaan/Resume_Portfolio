@@ -219,6 +219,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========================================
+    // CERTIFICATES SCROLL
+    // ========================================
+    const scrollContainer = document.getElementById('certificates-scroll');
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
+    
+    if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+        // Clone certificates for infinite scroll
+        const scrollContent = scrollContainer.innerHTML;
+        scrollContainer.innerHTML = scrollContent + scrollContent;
+        
+        // Manual scroll controls
+        scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.style.animation = 'none';
+            scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            setTimeout(() => {
+                scrollContainer.style.animation = 'scroll-left 60s linear infinite';
+            }, 500);
+        });
+        
+        scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.style.animation = 'none';
+            scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            setTimeout(() => {
+                scrollContainer.style.animation = 'scroll-left 60s linear infinite';
+            }, 500);
+        });
+    }
+    
+    // ========================================
     // SMOOTH SCROLL INDICATOR
     // ========================================
     const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -246,17 +276,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // ========================================
-    // HEADER BACKGROUND ON SCROLL
+    // CONNECT MODAL
     // ========================================
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(10, 15, 30, 0.95)';
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            header.style.background = 'rgba(10, 15, 30, 0.8)';
-            header.style.boxShadow = 'none';
+    const openModalBtn = document.getElementById('open-connect-modal');
+    const connectModal = document.getElementById('connect-modal');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    
+    // Open modal
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            connectModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close modal functions
+    const closeModal = () => {
+        connectModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+    
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+    
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && connectModal.classList.contains('active')) {
+            closeModal();
         }
+    });
+    
+    // ========================================
+    // SKILLS TAB SWITCHING
+    // ========================================
+    const skillTabs = document.querySelectorAll('.skill-tab');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    skillTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and panels
+            skillTabs.forEach(t => t.classList.remove('active'));
+            tabPanels.forEach(panel => panel.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            tab.classList.add('active');
+            document.getElementById(`${targetTab}-tab`).classList.add('active');
+        });
     });
     
     // ========================================
@@ -264,6 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========================================
     console.log('%c👋 Hello Developer!', 'font-size: 20px; font-weight: bold; color: #3b82f6;');
     console.log('%cWelcome to my portfolio. Feel free to explore the code!', 'font-size: 14px; color: #9ca3af;');
-    console.log('%c🚀 Built with HTML, CSS, and Vanilla JavaScript', 'font-size: 12px; color: #8b5cf6;');
+    console.log('%c🚀 Built with HTML, CSS, and JavaScript', 'font-size: 12px; color: #8b5cf6;');
     
 });
